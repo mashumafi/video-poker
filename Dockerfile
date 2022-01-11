@@ -1,9 +1,9 @@
-FROM debian:bookworm-slim
+FROM debian:buster-slim
 
 ENV PATH="${PATH}:${HOME}/.cargo"
 
 RUN apt update
-RUN apt install -y curl npm
+RUN apt install -y curl node npm
 
 RUN npm install --global yarn
 
