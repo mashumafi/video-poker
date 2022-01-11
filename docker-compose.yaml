@@ -5,7 +5,7 @@ services:
   build:
     build:
       context: .
-    command: yarn add && yarn build
+    command: bash -c "yarn install && yarn build"
     volumes:
       - .:/workdir
 

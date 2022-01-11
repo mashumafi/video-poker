@@ -1,8 +1,15 @@
-FROM rust:1.57.0-alpine3.13
+FROM debian:buster-slim
 
-RUN curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+ENV PATH="${PATH}:${HOME}/.cargo"
 
-RUN apk add --update nodejs npm
+RUN apt update
+RUN apt install -y curl npm
+
 RUN npm install --global yarn
+
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN $HOME/.cargo/bin/rustup toolchain install nightly
+RUN $HOME/.cargo/bin/rustup default nightly
+RUN $HOME/.cargo/bin/cargo install wasm-pack
 
 WORKDIR /workdir
