@@ -3,9 +3,9 @@ FROM debian:buster-slim
 ENV PATH="${PATH}:${HOME}/.cargo"
 
 RUN apt update
-RUN apt install -y curl gcc g++ make
+RUN apt install -y curl
 RUN curl -sL https://deb.nodesource.com/setup_16.x | bash
-RUN apt install -y nodejs npm
+RUN apt install -y npm
 
 RUN npm install --global yarn
 
