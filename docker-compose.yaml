@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  export:
+    build:
+      context: .
+    command: yarn build
+    volumes:
+      - .:/workdir
+
