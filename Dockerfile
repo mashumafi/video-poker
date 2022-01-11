@@ -4,7 +4,7 @@ ENV PATH="${PATH}:${HOME}/.cargo"
 
 RUN apt update
 RUN apt install -y curl
-RUN curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+RUN curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
 RUN apt install -y curl nodejs npm
 
 RUN npm install --global yarn
