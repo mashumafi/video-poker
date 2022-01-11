@@ -3,7 +3,7 @@ FROM debian:buster-slim
 ENV PATH="${PATH}:${HOME}/.cargo"
 
 RUN apt update
-RUN apt install -y curl node npm
+RUN apt install -y curl nodejs npm
 
 RUN npm install --global yarn
 
