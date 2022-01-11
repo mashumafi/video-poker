@@ -2,7 +2,7 @@ version: "3"
 
 services:
 
-  export:
+  build:
     build:
       context: .
     command: yarn build
