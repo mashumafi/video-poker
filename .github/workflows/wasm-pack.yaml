@@ -1,3 +1,4 @@
+name: wasm-pack
 on: [push, pull_request]
 
 jobs:
@@ -16,5 +17,5 @@ jobs:
       - name: Archive Build
         uses: actions/upload-artifact@v2
         with:
-          name: build
+          name: video-poker
           path: dist/*
