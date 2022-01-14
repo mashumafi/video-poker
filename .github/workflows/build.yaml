@@ -1,5 +1,7 @@
-name: wasm-pack
-on: [push, pull_request]
+name: Build Video Poker
+on:
+  push:
+    branches: [ main ]
 
 jobs:
   test:
@@ -9,8 +11,11 @@ jobs:
 
       - run: rustup default nightly
 
-      - name: Install
+      - name: Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - name: Install wasm-opt
+        run: npm i wasm-opt -g
 
       - run: yarn install && yarn build
 
