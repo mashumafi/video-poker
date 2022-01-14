@@ -6,21 +6,31 @@ const dist = path.resolve(__dirname, "dist");
 
 module.exports = {
   mode: "production",
+
+  experiments: {
+    asyncWebAssembly: true,
+  },
+
   entry: {
     index: "./js/index.js"
   },
+
   output: {
     path: dist,
     filename: "[name].js"
   },
+
   devServer: {
     contentBase: dist,
     host: '0.0.0.0', // Allow access from remote machines
   },
+
   plugins: [
-    new CopyPlugin([
-      path.resolve(__dirname, "static")
-    ]),
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, "static"), to: "" }
+      ]
+    }),
 
     new WasmPackPlugin({
       crateDirectory: __dirname,

@@ -1,0 +1,21 @@
+name: wasm-pack
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - run: rustup default nightly
+
+      - name: Install
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+
+      - run: yarn install && yarn build
+
+      - name: Archive Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: video-poker
+          path: dist/*

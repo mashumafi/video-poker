@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  build:
+    build:
+      context: .
+    command: bash -c "yarn install && yarn build"
+    volumes:
+      - .:/workdir
+
