@@ -13,6 +13,5 @@ RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
 RUN $HOME/.cargo/bin/rustup toolchain install nightly
 RUN $HOME/.cargo/bin/rustup default nightly
 RUN $HOME/.cargo/bin/cargo install wasm-pack
-RUN $HOME/.cargo/bin/rustup target add wasm32-unknown-unknown
 
 WORKDIR /workdir
