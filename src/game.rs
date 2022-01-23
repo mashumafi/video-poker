@@ -302,10 +302,7 @@ impl Game {
 
     pub fn mouse_move(&mut self, _x: i32, _y: i32) {}
 
-    pub fn mouse_down(&mut self, _x: i32, _y: i32) {
-        self.deal();
-        self.redraw();
-    }
+    pub fn mouse_down(&mut self, _x: i32, _y: i32) {}
 
     pub fn mouse_up(&mut self, _x: i32, _y: i32) {}
 
